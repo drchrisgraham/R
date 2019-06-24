@@ -207,4 +207,19 @@ LungCapDatadata1[-(5:9),]
 > summary(x)
 0 1 
 6 3 
+> mean(Age[Gender=="female"])
+[1] 12.44972
+> mean(Age[Gender=="male"])
+[1] 12.20708
 
+> MaleOver15 <- LungCapDatadata1[Gender=="male" & Age>15,]
+> dim(MaleOver15)
+[1] 89  6
+> MaleOver15[1:6,]
+   LungCap Age Height Smoke Gender Caesarean
+11  11.500  19   76.4    no   male       yes
+12  10.925  17   71.7    no   male        no
+23  10.025  16   72.4    no   male        no
+40  11.325  17   77.7    no   male        no
+49  12.950  17   74.9    no   male        no
+55  12.225  18   79.6    no   male        no
