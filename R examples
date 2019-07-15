@@ -242,3 +242,6 @@ Age[1:5]
 3   9.550  16   69.7    no female       yes    FALSE
 4  11.125  14   71.0    no   male        no    FALSE
 5   4.800   5   56.9    no   male        no    FALSE
+#Array#
+apply(X=Stock_prices_for_SQL, MARGIN=2, FUN=mean)
+#tApply for subsets#
