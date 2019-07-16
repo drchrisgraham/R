@@ -244,4 +244,30 @@ Age[1:5]
 5   4.800   5   56.9    no   male        no    FALSE
 #Array#
 apply(X=Stock_prices_for_SQL, MARGIN=2, FUN=mean)
-#tApply for subsets#
+#tApply for subsets, Returns a vector or array or list of values obtained 
+by applying a function to margins of an array or matrix. #
+#Mean age of smokers/ non smokers separately#
+tapply(X=Age, INDEX=Smoke, FUN=mean)
+      no      yes 
+12.03549 14.77922
+#Saved in an object called m#
+m <- tapply(X=Age, INDEX=Smoke, FUN=mean)
+tapply(X=Age, INDEX=Smoke, FUN=summary)
+$no
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   3.00    9.00   12.00   12.04   15.00   19.00 
+$yes
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  10.00   13.00   15.00   14.78   17.00   19.00
+tapply(X=Age, INDEX=Smoke, FUN=quantile, probs=c(0.2,0.8))
+$no
+20% 80% 
+  8  16 
+$yes
+20% 80% 
+ 12  17 
+tapply(X=Age, INDEX=list(Smoke,Gender), FUN=mean)
+      female     male
+no  12.12739 11.94910
+yes 14.75000 14.81818
+
