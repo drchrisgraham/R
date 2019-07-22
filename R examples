@@ -270,4 +270,32 @@ tapply(X=Age, INDEX=list(Smoke,Gender), FUN=mean)
       female     male
 no  12.12739 11.94910
 yes 14.75000 14.81818
+# Pie charts Bar charts#
+> attach(LungCapDatadata1)
+> table(Gender)
+Gender
+female   male 
+   358    367 
+> count <- table(Gender)
+> count
+Gender
+female   male 
+   358    367 
+> table(Gender)/725
+Gender
+   female      male 
+0.4937931 0.5062069 
+> percent <- table(Gender)/725
+> percent
+Gender
+   female      male 
+0.4937931 0.5062069 
+> barplot(count)
+> barplot(percent)
+> barplot(percent, main="Title", xlab="Gender",ylab="%")
+> barplot(percent, main="Title", xlab="Gender",ylab="%",las=1)
+> barplot(percent, main="Title", xlab="Gender",ylab="%",las=1, names.arg=c("Female","Male"),horiz=TRUE)
+> pie(count)
+> pie(count, main="Title Here")
+> box()
 
