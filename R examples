@@ -298,4 +298,15 @@ Gender
 > pie(count)
 > pie(count, main="Title Here")
 > box()
+# Box Plots#
+> help("boxplot")
+> boxplot(LungCap)
+> quantile(LungCap, probs=c(0,0.25,0.5,0.75,1))
+    0%    25%    50%    75%   100% 
+ 0.507  6.150  8.000  9.800 14.675 
+> boxplot(LungCap, main="Boxplot Lung Cap",ylab="Lung Capacity")
+> boxplot(LungCap, main="Boxplot Lung Cap",ylab="Lung Capacity", ylim=c(0, 16))
+> boxplot(LungCap, main="Boxplot Lung Cap",ylab="Lung Capacity", ylim=c(0, 16), las=1)
+> boxplot(LungCap ~ Gender)
+> boxplot(LungCap ~ Gender, main="Boxplot Lung Cap by Gender")
 
