@@ -309,4 +309,25 @@ Gender
 > boxplot(LungCap, main="Boxplot Lung Cap",ylab="Lung Capacity", ylim=c(0, 16), las=1)
 > boxplot(LungCap ~ Gender)
 > boxplot(LungCap ~ Gender, main="Boxplot Lung Cap by Gender")
+# Stratified box plots, smoking and lung capacity#
+> AgeGroups <- cut(Age, breaks=c(0,13,15,17,25), labels=c("<13", "14/15", "16/17", "18+"))
+> Age[1:5]
+[1]  6 18 16 14  5
+> AgeGroups[1:5]
+[1] <13   18+   16/17 14/15 <13  
+Levels: <13 14/15 16/17 18+
+ [1] "<13"   "14/15" "16/17" "18+"  
+> boxplot(LungCap, y="LungCapacity", main="Boxplot LungCap", las=1)
+> boxplot(LungCap, y="LungCapacity", main="Boxplot LungCap vs Smoking", las=1)
+> boxplot(LungCap~Smoke, y="LungCapacity", main="Boxplot LungCap vs Smoking", las=1)
+> boxplot(LungCap[Age>=18]~Smoke[Age>=18],xlab="Smoke", ylab=LungCap)
+> boxplot(LungCap[Age>=18]~Smoke[Age>=18],xlab="Smoke", ylab=LungCap, las=1)
+> boxplot(LungCap~Smoke, y="LungCapacity", main="Boxplot LungCap vs Smoking", las=1)
+> boxplot(LungCap[Age>=18]~Smoke[Age>=18],xlab="Smoke", ylab=LungCap)
+> boxplot(LungCap~Smoke, y="LungCapacity", main="Boxplot LungCap vs Smoking", las=1)
+> boxplot(LungCap[Age>=18]~Smoke[Age>=18],main="LungCap vs Smoke", ylab="LungCapacity for 18+", las=1)
+> boxplot(LungCap[Age<13]~Smoke[Age<13],main="LungCap vs Smoke", ylab="LungCapacity for <13", las=1)
+> boxplot(LungCap~Smoke*AgeGroups,main="LungCap vs Smoke", ylab="LungCapacity for AgeGroups", las=1)
+> boxplot(LungCap~Smoke*AgeGroups,main="LungCap vs Smoke", ylab="LungCapacity for AgeGroups", las=2)
+> boxplot(LungCap~Smoke*AgeGroups,main="LungCap vs Smoke", ylab="LungCapacity for AgeGroups", las=2, col=c(4,2))
 
