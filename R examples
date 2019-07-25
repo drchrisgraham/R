@@ -330,4 +330,17 @@ Levels: <13 14/15 16/17 18+
 > boxplot(LungCap~Smoke*AgeGroups,main="LungCap vs Smoke", ylab="LungCapacity for AgeGroups", las=1)
 > boxplot(LungCap~Smoke*AgeGroups,main="LungCap vs Smoke", ylab="LungCapacity for AgeGroups", las=2)
 > boxplot(LungCap~Smoke*AgeGroups,main="LungCap vs Smoke", ylab="LungCapacity for AgeGroups", las=2, col=c(4,2))
+# Histograms#
+attach(LungCapDatadata1)
+> ls(LungCapDatadata1)
+[1] "Age"       "Caesarean" "Gender"    "Height"    "LungCap"   "Smoke" 
+> hist(LungCap)
+> hist(LungCap, freq=FALSE)
+> hist(LungCap, prob=T)
+> hist(LungCap, prob=T, ylim=c(0,0.2),breaks=7)
+> hist(LungCap, prob=T, ylim=c(0,0.2),breaks=14)
+> hist(LungCap, prob=T, ylim=c(0,0.2),breaks=seq(from=0,to=16,by=2))
+> hist(LungCap, prob=T, ylim=c(0,0.2),breaks=seq(from=0,to=16,by=2), main= "Boxplot of Lung Capacity", xlab="Lung Capacity",las=1)
+> lines(density(LungCap))
+> lines(density(LungCap), col=2,lwd=3)
 
