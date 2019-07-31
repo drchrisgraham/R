@@ -370,4 +370,18 @@ barplot(table1, beside=T)
 barplot(table1, beside=T,legend.text = c("Non-Smoker","Smoker"),main="Gender vs Smoking", xlab="Gender", las=1, col=c(2,4))
 #Mosaic Plots#
 mosaicplot(table1)
+#Scatter Plots#
+> attach(LungCapDatadata1)
+> ls(LungCapDatadata1)
+[1] "Age"       "Caesarean" "Gender"    "Height"    "LungCap"   "Smoke"    
+> ?plot
+> cor(Age,Height)
+[1] 0.8357368
+> plot(Age,Height, main="Scatter Plot Age vs Height",xlab="Age",ylab="Height",las=1)
+> plot(Age,Height, main="Scatter Plot Age vs Height",xlab="Age",ylab="Height",las=1,xlim=c(0,25),cex=0.5)
+> plot(Age,Height, main="Scatter Plot Age vs Height",xlab="Age",ylab="Height",las=1,xlim=c(0,25),pch=8)
+> plot(Age,Height, main="Scatter Plot Age vs Height",xlab="Age",ylab="Height",las=1,xlim=c(0,25),pch=8, col=2)
+> abline(lm(Height~Age),col=4)
+> lines(smooth.spline(Age,Height))
+> lines(smooth.spline(Age,Height),lty=2,lwd=5)
 
