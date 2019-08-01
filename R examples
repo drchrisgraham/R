@@ -384,4 +384,68 @@ mosaicplot(table1)
 > abline(lm(Height~Age),col=4)
 > lines(smooth.spline(Age,Height))
 > lines(smooth.spline(Age,Height),lty=2,lwd=5)
+#Calculating Mean, Standard Deviation, Frequencies #
+attach(LungCapDatadata1)
+> ls(LungCapDatadata1)
+[1] "Age"       "Caesarean" "Gender"    "Height"    "LungCap"   "Smoke"    
+> summary(LungCapDatadata1)
+    LungCap            Age            Height      Smoke        Gender    Caesarean
+ Min.   : 0.507   Min.   : 3.00   Min.   :45.30   no :648   female:358   no :561  
+ 1st Qu.: 6.150   1st Qu.: 9.00   1st Qu.:59.90   yes: 77   male  :367   yes:164  
+ Median : 8.000   Median :13.00   Median :65.40                                   
+ Mean   : 7.863   Mean   :12.33   Mean   :64.84                                   
+ 3rd Qu.: 9.800   3rd Qu.:15.00   3rd Qu.:70.30                                   
+ Max.   :14.675   Max.   :19.00   Max.   :81.80                                   
+> table(Smoke)
+Smoke
+ no yes 
+648  77 
+> table(Smoke)/725
+Smoke
+       no       yes 
+0.8937931 0.1062069 
+> length(Smoke)
+[1] 725
+> table(Smoke)/length(Smoke)
+Smoke
+       no       yes 
+0.8937931 0.1062069 
+> table(Smoke,Gender)
+     Gender
+Smoke female male
+  no     314  334
+  yes     44   33
+> mean(LungCap)
+[1] 7.863148
+> mean(LungCap,trim=0.1)
+[1] 7.938081
+> median(LungCap)
+[1] 8
+> var(LungCap)
+[1] 7.086288
+> sd(LungCap)
+[1] 2.662008
+> sqrt(var(LungCap))
+[1] 2.662008
+> min(LungCap)
+[1] 0.507
+> max(LungCap)
+[1] 14.675
+> range(LungCap)
+[1]  0.507 14.675
+> quantile(LungCap,probs=0.9)
+   90% 
+11.205 
+> quantile(LungCap,probs=c(0.2,0.5,0.9,1))
+   20%    50%    90%   100% 
+ 5.645  8.000 11.205 14.675 
+> cor(LungCap,Age)
+[1] 0.8196749
+> cor(LungCap,Age, method="spearman")
+[1] 0.8172464
+> cov(LungCap,Age)
+[1] 8.738289
+> var(LungCap,Age)
+[1] 8.738289
+
 
