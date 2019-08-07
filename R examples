@@ -462,5 +462,18 @@ abline(lm(Height~Age),col=4, lty=2,lwd=6)
 Plot(Age[Gender==”male”], Height[Gender==”male”],col=4,pch=”M”,xlab=”Age”,ylab=”Height”,main=”Height vs Age”)
 plot(Age[Gender=="male"],Height[Gender=="male"], col=4,pch="m",xlab="Age",ylab="Height")
 points(Age[Gender=="female"],Height[Gender=="female"],col=3,pch="f")
+#Add text to a plot#
+plot(Age,LungCap, main="Scatterplot of LungCap vs Age", las=1)
+> cor(Age,LungCap)
+[1] 0.8196749
+> text(x=5,y=11,label="r=0.82")
+> text(x=3.5,y=13,adj=0,lab="r=0.82", cex=0.5, col=4,font=4)
+> abline(h=mean(LungCap), col=2)
+> abline(h=mean(LungCap), col=2,lwd=2)
+> text(x=2.5,y=8.5,adj=0,lab="Mean Cap Data", cex=0.65, col=2)
+> mtext(text="r=0.82",side=2)
+> mtext(text="r=0.82",side=1)
+> mtext(text="r=0.82",side=0)
+
 
 
