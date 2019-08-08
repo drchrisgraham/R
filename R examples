@@ -475,5 +475,24 @@ plot(Age,LungCap, main="Scatterplot of LungCap vs Age", las=1)
 > mtext(text="r=0.82",side=1)
 > mtext(text="r=0.82",side=0)
 
+#Add and customize legends#
+attach(LungCapDatadata1)
+> ls(LungCapDatadata1)
+[1] "Age"       "Caesarean" "Gender"    "Height"    "LungCap"   "Smoke"    
+> plot(Age[Smoke=="no"],LungCap[Smoke=="no"],main="LungCap vs Age for Smoke/Non Smoke, col=4")
+> plot(Age[Smoke=="no"],LungCap[Smoke=="no"],main="LungCap vs Age for Smoke/Non Smoke, col=4",xlab="Age",ylab="Lung Capacity")
+> points(Age[Smoke=="yes"],LungCap[Smoke=="yes"],col=2)
+> legend(x=3.5,y=14, legend=c("Smoke","Non Smoke"),fill=c(4,2))
+> plot(Age[Smoke=="no"],LungCap[Smoke=="no"],main="LungCap vs Age for Smoke/Non Smoke, col=4",xlab="Age",ylab="Lung Capacity")
+> plot(Age[Smoke=="no"],LungCap[Smoke=="no"],main="LungCap vs Age for Smoke/Non Smoke, col=4",xlab="Age",ylab="Lung Capacity",pch=16)
+> points(Age[Smoke=="yes"],LungCap[Smoke=="yes"],col=2,pch=17)
+> legend(x=3.5,y=14, legend=c("Smoke","Non Smoke"),col=c(4,2),pch=c(16,17))
+> plot(Age[Smoke=="no"],LungCap[Smoke=="no"],main="LungCap vs Age for Smoke/Non Smoke, col=4",xlab="Age",ylab="Lung Capacity",pch=16)
+> plot(Age[Smoke=="no"],LungCap[Smoke=="no"],main="LungCap vs Age for Smoke/Non Smoke, col=4",xlab="Age",ylab="Lung Capacity",pch=16)
+> points(Age[Smoke=="yes"],LungCap[Smoke=="yes"],col=2,pch=17)
+> legend(x=3.5,y=14, legend=c("Smoke","Non Smoke"),col=c(4,2),pch=c(16,17),bty="n")
+> lines(smooth.spline(Age[Smoke=="no"],LungCap[Smoke=="no"]),col=4)
+> lines(smooth.spline(Age[Smoke=="no"],LungCap[Smoke=="no"]),col=4,lwd=3)
+> lines(smooth.spline(Age[Smoke=="yes"],LungCap[Smoke=="yes"]),col=2,lwd=3)
 
 
