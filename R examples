@@ -447,6 +447,7 @@ Smoke female male
 [1] 8.738289
 > var(LungCap,Age)
 [1] 8.738289
+
 #How to Modify and Customize Plots in R#
 help(par)
 plot(Age,Height,main="Scatterplot")
@@ -462,6 +463,22 @@ abline(lm(Height~Age),col=4, lty=2,lwd=6)
 Plot(Age[Gender==”male”], Height[Gender==”male”],col=4,pch=”M”,xlab=”Age”,ylab=”Height”,main=”Height vs Age”)
 plot(Age[Gender=="male"],Height[Gender=="male"], col=4,pch="m",xlab="Age",ylab="Height")
 points(Age[Gender=="female"],Height[Gender=="female"],col=3,pch="f")
+
+#Split plotting screen#
+par(mfrow=c(1,2))
+> points(Age[Gender=="male"],Height[Gender=="male"],col=4,pch="m",xlab="Age",ylab="Height",main="Height vs Age")
+> points(Age[Gender=="male"],Height[Gender=="male"],xlab="Age",ylab="Height",main="Height vs Age for Males")
+> points(Age[Gender=="female"],Height[Gender=="female"],xlab="Age",ylab="Height",main="Height vs Age for Females")
+par(mfrow=c(1,2))
+plot(Age[Gender=="male"],Height[Gender=="male"],xlab="Age",ylab="Height",main="Height vs Age for Males",xlim=c(0,20),ylim=c(45,85))
+plot(Age[Gender=="female"],Height[Gender=="female"],xlab="Age",ylab="Height",main="Height vs Age for Feales",xlim=c(0,20),ylim=c(45,85))
+par(mfrow=c(1,1))
+plot(Age,Height,main="TITLE",axes=f)
+axis(side=1, at=c(7,12.3,15), labels=c("sev","mean","15"))
+axis(side=2, at=c(55,65,75), labels=c(55,65,75))
+box()
+> axis(side=4,at=c(50,60,70),labels=c(50,60,70) )
+
 #Add text to a plot#
 plot(Age,LungCap, main="Scatterplot of LungCap vs Age", las=1)
 > cor(Age,LungCap)
