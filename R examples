@@ -512,4 +512,18 @@ attach(LungCapDatadata1)
 > lines(smooth.spline(Age[Smoke=="no"],LungCap[Smoke=="no"]),col=4,lwd=3)
 > lines(smooth.spline(Age[Smoke=="yes"],LungCap[Smoke=="yes"]),col=2,lwd=3)
 
+#Binomial distributions#
+> # P(X=3)
+> dbinom(x=3,siz=20, p=1/6)
+[1] 0.2378866
+> # P(X=0) & # P(X=1) & .... & # P(X=3)
+> dbinom(x=0:3,siz=20, p=1/6)
+[1] 0.02608405 0.10433621 0.19823881 0.23788657
+> # P(X<=3)
+> sum( dbinom(x=0:3,siz=20, p=1/6))
+[1] 0.5665456
+> # P(X<=3)
+> pbinom(q=3,size=20,prob=1/6, lower.tail=T)
+[1] 0.5665456
+
 
