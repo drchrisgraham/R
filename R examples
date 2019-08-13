@@ -526,4 +526,23 @@ attach(LungCapDatadata1)
 > pbinom(q=3,size=20,prob=1/6, lower.tail=T)
 [1] 0.5665456
 
+#Poisson Distribution in R#
+#Know rate of lambda = 7 #
+#dpois used to find probability density of function x #
+#p that X = exactly 4#
+ > dpois(x=4,lambda=7)
+[1] 0.09122619
+#p that X = 0 & 1, 2, 3 & exactly 4#
+> dpois(x=0:4,lambda=7)
+[1] 0.000911882 0.006383174 0.022341108 0.052129252 0.091226192
+#p that X < 4#
+sum(dpois(x=0:4,lambda=7))
+[1] 0.1729916
+> ppois(q=4,lambda=7,lower.tail=t)
+[1] 0.1729916
+#p that X > 4#
+> ppois(q=4,lambda=7,lower.tail=f)
+[1] 0.8270084
+
+#random sample can be found using rpois#
 
