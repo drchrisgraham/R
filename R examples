@@ -546,3 +546,27 @@ sum(dpois(x=0:4,lambda=7))
 
 #random sample can be found using rpois#
 
+#normal distribution, zscores, using X which is normally distributed and a mean 
+of 75and a STD Dev of 5#
+#calculate probability of X is less than 70#
+pnorm(q=70,mean=75,sd=5,lower.tail=T)
+[1] 0.1586553
+pnorm(q=85,mean=75,sd=5,lower.tail=f)
+[1] 0.02275013
+#Z is > than 1, area above a z-score#
+pnorm(q=1,mean=0,sd=1,lower.tail=f)
+[1] 0.1586553
+
+# plot the probability density function#
+x<-seq(from=55,to=95, by=0.25)
+x
+dens <- dnorm(x, mean=75, sd=5)
+plot(x,dens)
+plot(x,dens, type="l")
+# add a line at vertical of 75#
+abline(v=75)
+#draw a random sample from a normal population#
+rand <- rnorm(n=40,mean=75,sd=5)
+rand
+hist(rand)
+
