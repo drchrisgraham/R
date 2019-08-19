@@ -570,3 +570,13 @@ rand <- rnorm(n=40,mean=75,sd=5)
 rand
 hist(rand)
 
+#t tests mean=0 sd=1, test stat=2.3, df=25, one sides p value the prob of t being greater than 2.3.  #
+pt(q=2.3, df=25,lower.tail=f)
+[1] 0.01503675
+# 2 sides p value#
+> pt(q=2.3, df=25,lower.tail=f)+ pt(q=-2.3,df=25, lower.tail=t)
+[1] 0.03007351
+# confidence intervals, 2 sides 95% Confidence interval#
+> qt(p=0.025,df=25,lower.tail=t)
+[1] -2.059539
+
