@@ -580,3 +580,8 @@ pt(q=2.3, df=25,lower.tail=f)
 > qt(p=0.025,df=25,lower.tail=t)
 [1] -2.059539
 
+#One-Sample t Test & Confidence Interval, one sided, 95% confidence#
+> boxplot(LungCap)
+> t.test(LungCap, mu=8, alternative="less", conf.level=0.95)
+#One-Sample t Test & Confidence Interval, two sided, 95% confidence#
+> t.test(LungCap, mu=8, alternative="two.sided", conf.level=0.95)
