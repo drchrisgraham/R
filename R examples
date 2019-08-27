@@ -594,3 +594,23 @@ pt(q=2.3, df=25,lower.tail=f)
 # Null hypothesis the median value of the lung capacity of smokes equals non smokers#
 wilcox.test(LungCap~Smoke, mu=0,alt="two.sided",conf.int=T,conf.level=0.95,paired=F,exact=T,correct=T)
 
+# linear regression, lung capacity y variable#
+plot(Age, LungCap,main="Scatterplot")
+> cor(Age,LungCap)
+[1] 0.8196749
+> mod <- lm(LungCap~Age) 
+> summary(mod)
+> attributes(mod)
+> mod$coefficients
+(Intercept)         Age 
+  1.1468578   0.5448484 
+> coef(mod)
+(Intercept)         Age 
+  1.1468578   0.5448484 
+> plot(Age, LungCap,main="Scatterplot")
+> abline(mod)
+> abline(mod,col=2, lwd=3)
+confint(mod)
+> confint(mod,level=0.99)
+> summary(mod)
+> anova(mod)
